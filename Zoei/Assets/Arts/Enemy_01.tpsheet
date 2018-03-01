@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:f98bf1653f77dd40f2098830814e4aec:9dc97d467598a9819440366022bdaefa:63bf256c72c717d5a03c142eeb8cdc88$
+#
+:format=40300
+:texture=Enemy_01.png
+:size=32x32
+:pivotpoints=enabled
+:borders=disabled
+
+Zoei_Enemy_Idle00;1;15;14;16; 0.5;0.5; 0;0;0;0; 5;14;0;0;0;0;14;1;16;14;16; 3;2;3;4;0;2;4;0;1;2
+Zoei_Enemy_Idle01;17;17;14;14; 0.5;0.5714285714285714; 0;0;0;0; 4;14;0;0;0;0;14;14;14; 2;1;2;3;0;1;3
