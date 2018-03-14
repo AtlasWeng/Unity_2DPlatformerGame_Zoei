@@ -13,7 +13,7 @@ public class CustomPhysics : MonoBehaviour {
 	protected Vector2 groundNormal;
 	protected Vector2 velocity;
 	protected Rigidbody2D rb2d;
-	protected ContactFilter2D contactFilter;
+	public ContactFilter2D contactFilter;
 	protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
 	protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
 
@@ -23,14 +23,13 @@ public class CustomPhysics : MonoBehaviour {
 	void OnEnable ()
 	{
 		rb2d = GetComponent<Rigidbody2D>();
+		contactFilter.useTriggers = false;
+		contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
+		contactFilter.useLayerMask = true;
 	}
 
 	// Use this for initialization
 	void Start () {
-		contactFilter.useTriggers = false;
-		contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
-		contactFilter.useLayerMask = true;
-		
 	}
 
 	void Movement (Vector2 move, bool yMovement)
@@ -72,9 +71,15 @@ public class CustomPhysics : MonoBehaviour {
 	void Update(){
 		targetVelocity = Vector2.zero;
 		ComputeVelocity();
+		CheckMovingPlatform ();
 	}
 
 	protected virtual void ComputeVelocity ()
+	{
+
+	}
+
+	protected virtual void CheckMovingPlatform ()
 	{
 
 	}
